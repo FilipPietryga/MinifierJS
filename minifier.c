@@ -3,40 +3,33 @@
 #include <string.h>
 #include "functions.h"
 
-/*
+/** @brief Program sluzacy do skracania kodu programow napisanych w jedyku JS
+ *  @author Filip Pietryga
+ *  @date sierpień 2020
+ */
 
-  WSZYSTKO DZIAŁA JAK NALEŻY,
-  POWAŻNIE, TO CO MIAŁEM ZAIMPLEMENTOWAĆ
-  DZISIAJ, ZAIMPLEMENTOWAŁEM POPRAWNIE.
-
-  POTRZEBA JEDYNIE WPROWADZIĆ POPRAWKI
-  W KONTEKŚCIE ROZRÓŻNIANIA MIĘDZY KODEM PROGRAMU,
-  A ZAWARTOŚCIĄ STRINGÓW, ZMIANY W KODZIE NIE POWINNY
-  DOTYCZYĆ TEGO CO ZNAJDUJE SIĘ W ŚRODKU CUDZYSŁOWIÓW
-
-  SPRÓBUJĘ COŚ NA TO PORADZIĆ
-
-  poprawka...
-  
-  ZAIMPLEMENTOWANE!!!
-
-  PROGRAM JUŻ PRAKTYCZNIE DZIAŁA, 
-  TERAZ TYLKO NAPISAĆ SPRAWOZDANIE 
-  I MOŻNA ODDAWAĆ!! 
-  AHH, JESTEM Z SIEBIE DUMNY, 
-  WSZYSTKO ZROBIŁEM TAK JAK MIAŁEM :)
-
-  CIEKAWE CO BĘDĘ MUSIAŁ ZROBIĆ, ŻEBY TO ODDAĆ
-
-*/
 
 int main(int argc, char *argv[]) {
+  /** @brief główna funkja programu 
+ *  @param ilość argumentów
+ *  @param argumenty 
+ *  @return wartosc pomocnicza, pomagajaca okreslic, czy program wykonal sie dobrze
+*/
    if(argc <= 1) {
      printf("Podano zbyt mala ilosc argumentow");
+     return 1;
      } else {
-      printf("Podano odpowiednia ilosc argumentow");
+      printf("Podano odpowiednia ilosc argumentow\n");
      } 
-  char nazwa_pliku[] = argv[1];
+  char *nazwa_pliku;
+  int len = strlen(argv[1]);
+  printf("%s", argv[1]);
+  printf("\n%s, nazwa_pliku");
+  nazwa_pliku = malloc(len);
+  printf("\n%d\n", len);
+  memset(nazwa_pliku, ' ', len);
+  strcpy(nazwa_pliku, argv[1]);
+  printf("\n%s", nazwa_pliku);
   char tresc_pliku[2000] = "";
   if(nazwa_pliku == NULL) {
     printf("Nazwa pliku nie zostala okreslona");

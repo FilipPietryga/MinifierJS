@@ -4,12 +4,13 @@
 #include "functions.h"
 
 char* skrocNazwy(char tresc[]) {
+
   printf("\n\nRozpoczeto funkcje skracania nazw\n\n");
 
-  const int dlugosc = strlen(tresc);
+  const int dlugosc = strlen(tresc); 
   char *bufor = calloc(dlugosc+1, sizeof(char));
-  int indeks_znaleziska;
-  char nowy_kod[6000];
+  int indeks_znaleziska; 
+  char nowy_kod[6000]; 
 
   strcpy(bufor, tresc);
 
@@ -24,10 +25,10 @@ char* skrocNazwy(char tresc[]) {
     printf("%c", bufor[i]);
   }
     printf("\n");
-  int ilosc_slow_kluczowych = 3;
-  int indeks;
+  int ilosc_slow_kluczowych = 3; 
+  int indeks; 
   char obecny_znak = 'a';
-  int indeksy[300] = {0};
+  int indeksy[300] = {0}; 
   int obecny_indeks;
   char *slowa_kluczowe[3] = {"var", "const", "function"};
     for(int j = 0; j < ilosc_slow_kluczowych; j++) {
@@ -126,6 +127,11 @@ char* skrocNazwy(char tresc[]) {
 }
 
 void usunZnakZNapisu(char *napis, char znak) {
+  /** @brief Funkcja służąca do usuwania wybranych znaków z kodu programu, stworzona ze szczeólnym zamiarem usuwania spacji 
+ *  @param napis - ciag znakow, fragment kodu programu ktory ma ulec analizie pod kątem słów kluczowych
+ *  @param znak - znak ktory ma zostac usuniety z napisu
+ *  @return funkcja nie zwraca zadnych wartosci
+*/
   char *zrodlowy_napis, *nowy_napis;
   char ostatnieZnaki[11] = {' ', ' ',' ',' ',' ',' ',' ',' ',' ',' ',' '};
   int obecny_znak = 10;
